@@ -6,8 +6,17 @@ function basegen(s) {
   let luminances = [];
   let qtsimg = qtd_imagens;
   s.preload = () => {
-    for (let file of palettefiles) {
-      imgarray.push(s.loadImage(file));
+    let isMine = document.querySelector("#mine").checked;
+    if (!isMine) {
+      for (let file of palettefiles) {
+        imgarray.push(s.loadImage(file));
+      }
+    } else {
+      qtd_imagens = 818;
+      qtsimg = qtd_imagens;
+      outBaseGen = "luminos.png";
+      baseGenCallback();
+      s.remove();
     }
   };
   s.setup = () => {
@@ -42,7 +51,6 @@ function basegen(s) {
     });
     s.clear();
     x = 0;
-    console.log(luminances);
     for (let lu of luminances) {
       s.image(lu.img, x, 0, resolution, resolution);
       x += resolution;
