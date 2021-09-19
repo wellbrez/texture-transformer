@@ -31,7 +31,7 @@ let mappedImage = (s) => {
       }
     }
     let btnsave = document.createElement("button");
-    btnsave.innerText = "Salvar";
+    btnsave.innerText = "Download";
     document.querySelector("output").appendChild(btnsave);
     btnsave.onclick = s.salvar;
   };

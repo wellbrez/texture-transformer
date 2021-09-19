@@ -10,17 +10,19 @@
   </head>
   <body>
     <div id="form-pixels">
-      <label for="">Escolha as imagens que serão os pixels</label>
+      <label for=""
+        >Choose the base images (several minecraft block images)</label
+      >
 
       <div>
         <input type="checkbox" name="mine" id="mine" checked />
-        <label for="mine">Utilizar textura do minecraft</label>
+        <label for="mine">Alternatively use my minecraft texture</label>
       </div>
 
       <input type="file" value="" name="" id="base" multiple />
-      <label for="">Escolha a imagem para estilizar</label>
+      <label for="">Choose your image</label>
       <input type="file" value="" name="" id="imgtochange" />
-      <label>Tamanho das imagens (em pixels quadrados)</label>
+      <label>Size of the base images (default pack is 16)</label>
       <input type="number" value="16" name="" id="palres" />
       <button onclick="generate()">Generate</button>
     </div>
