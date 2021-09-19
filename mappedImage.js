@@ -12,6 +12,7 @@ let mappedImage = (s) => {
       dns2 * resolution,
       (dns2 * resolution) / aspectRatio
     );
+    s.background(255);
     cnv.parent(document.querySelector("output"));
     let lmn = [...imgluminance];
     for (let j = 0; j < resolution; j++) {
@@ -29,5 +30,12 @@ let mappedImage = (s) => {
         );
       }
     }
+    let btnsave = document.createElement("button");
+    btnsave.innerText = "Salvar";
+    document.querySelector("output").appendChild(btnsave);
+    btnsave.onclick = s.salvar;
+  };
+  s.salvar = function () {
+    s.save("minecraftado.png");
   };
 };
